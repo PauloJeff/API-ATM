@@ -17,6 +17,7 @@ class CreateAccountsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained('users');
             $table->integer('account_number');
+            $table->string('password');
             $table->timestamps();
         });
     }

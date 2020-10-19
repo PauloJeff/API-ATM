@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->date('birthday');
-            $table->string('CPF');
+            $table->string('cpf');
             $table->timestamps();
         });
     }
