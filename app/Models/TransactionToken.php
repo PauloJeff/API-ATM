@@ -10,10 +10,11 @@ class TransactionToken extends Model
     protected $fillable = [
         'token',
         'expiration_date',
-        'status'
+        'status',
+        'user_id'
     ];
 
-    public user() {
+    public function user() {
         return $this->belongsTo('App\Models\User');
     }
     

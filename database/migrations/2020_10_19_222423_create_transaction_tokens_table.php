@@ -16,7 +16,7 @@ class CreateTransactionTokensTable extends Migration
         Schema::create('transaction_tokens', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
-            $table->string('token');
+            $table->string('token')->unique();
             $table->dateTime('expiration_date');
             $table->boolean('status');
             $table->timestamps();

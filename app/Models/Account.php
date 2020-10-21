@@ -8,15 +8,19 @@ use Illuminate\Database\Eloquent\Model;
 class Account extends Model
 {
     protected $fillable = [
-        'account_number'
-    ];
-
-    protected $hidden = [
+        'account_number',
+        'balance',
+        'user_id',
+        'type',
         'password'
     ];
 
-    public user() {
+    public function user() {
         return $this->belongsTo('App\Models\User');
+    }
+
+    public function typeAccount() {
+        return $this->belongsTo('App\Models\TypeAccount');
     }
 
     use HasFactory;
